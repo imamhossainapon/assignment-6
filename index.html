@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en"data-theme="light">
+<head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+    <title>Assignment_6 file</title>
+<link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body class="font-[Lato]">
+
+    <!-- nav var -->
+    <div class="navbar bg-base-100 w-[90%] mx-auto justify-between items-center">
+        <div>
+          <h1 class="btn btn-ghost text-xl"><span class="text-[#0E7A81]"><i class="fa-solid fa-paw"></i></span> Peddy</h1>
+        </div>
+<div class=" lg:flex md:flexj gap-3  md:block hidden">
+
+    <p>home</p>
+    <p>shop</p> 
+    <p>contact</p>
+</div>
+
+
+        <div>
+
+           <div class="bg-white rounded-[50%]  shadow-lg p-2 px-3"><i class="fa-regular fa-user"></i></div> 
+          
+        </div>
+      </div>
+      <!-- nav section -->
+
+      
+        <div class=" flex flex-col  gap-4 justify-center items-center mt-10">
+
+
+            <p class="text-sm text-center  text-[#13131399]">Bringing Families Together   ❤️‍🔥 </p>
+            <h1 class="text-center 
+            lg:text-4xl text-2xl font-bold ">
+                Your Path to Adoption  <br>Starts Here</h1>
+           
+            <p class="text-center lg:w-fit md:w-fit w-[80%] mx-auto text-xs  text-[#13131399]">It is a long established fact <br> that a reader will be distracted by the readable content of a page when <br> looking at its layout. The point of using Lorem Ipsum is <br> that it has a.</p>
+
+
+            <button onclick="view()" class=" py-2 p-5 text-white bg-[#0E7A81] rounded-lg"> view more</button>
+
+           
+        </div>
+
+        <!-- section button -->
+
+        <section class="w-[90%] mx-auto hidden " id="adopt">
+            <img src="./images/pet.webp" alt="">
+<div class="flex flex-col  gap-3 justify-center items-center mt-10 "  >
+    <h1 class="text-center text-2xl font-bold">Adopt  Your  Best Friend</h1>
+    <p class="text-center text-xs  text-[#13131399]">It is a long established fact that a reader will be distracted by  the readable content of  <br>  a page when looking at its layout.The point of using Lorem Ipsum is that it has a.</p>
+</div>
+
+
+<div class="grid lg:grid-cols-4 grid-cols-2 mt-10 pb-10 lg:gap-32 gap-5 w-[90%] mx-auto " id="card-4">
+
+
+</div>
+<div id="spinner" class="hidden flex justify-center items-center i">
+    <span class="loading loading-bars loading-xs bg-orange-500"></span>
+<span class="loading loading-bars loading-sm bg-orange-700"></span>
+<span class="loading loading-bars loading-md bg-zinc-500"></span>
+<span class="loading loading-bars loading-lg bg-sky-900"></span>
+    </div>
+
+    
+
+<div class="flex justify-between">
+    <h1 class="font-bold text-base lg:text-lg">Best Deal For you</h1>
+    <button id="short_price" class="flex justify-center  items-center lg:py-2 md:py-2 py-2 px-2  lg:p-5 md:p-4 text-white bg-[#0E7A81] rounded-lg"> short by price</button>
+
+</div>
+        </section>
+
+<!-- section dog -->
+
+<section class="w-[90%] mx-auto ">
+
+    <!-- You can open the modal using ID.showModal() method -->
+<button  class="btn hidden" onclick="showModal()">open modal</button>
+<dialog id="my_modal_3" class="modal">
+  <div class="modal-box ">
+    <form method="dialog">
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+    </form>
+
+
+    <div class="flex flex-col justify-center items-center gap-6">
+        <img src="./images/logo.webp" alt="">
+        <h3 class="text-2xl font-bold text-cente ">Congratulations</h3>
+        <p>Adoption process is start for your pet</p>
+            <p  class="font-extrabold text-4xl text-center  ">
+              <span id="seconds" ></span>
+            </p>
+    </div>
+   
+    
+    </span></p>
+  </div>
+</dialog>
+
+<div id="spinner2" class="hidden flex justify-center items-center mt-4">
+  <span class="loading loading-bars loading-xs bg-orange-500"></span>
+  <span class="loading loading-bars loading-sm bg-orange-700"></span>
+  <span class="loading loading-bars loading-md bg-zinc-500"></span>
+  <span class="loading loading-bars loading-lg bg-sky-900"></span>
+    </div>
+
+    <div class="lg:flex mt-10 lg:flex-row md:flex-row  flex flex-col-reverse gap-4">
+
+        <!-- card div -->
+        <div class="w-full bg-stone-700 grid  lg:grid-cols-3 md:grid-cols-2 grid-cols-1  gap-4" id="card_mama"> 
+
+          <!-- bg-base-100 -->
+
+</div> 
+      <div class="shadow-2xl rounded-lg bg-stone-700 lg:w-1/4 md:w-1/4 ">
+
+        <div id="pet_img" class="w-[90%] mx-auto  py-5 lg:grid lg:grid-cols-2 gap-1   rounded-3xl">
+
+        </div> </div>
+
+
+    </div> </div></section>
+
+      <!-- modal -->
+       <img src="" alt="">
+
+      <!-- Open the modal using ID.showModal() method -->
+<button id="show-modal" class="btn hidden " onclick="customModal.showModal()">open modal</button>
+<dialog id="customModal" class="modal">
+  <div class="modal-box">
+<div id="modal_div">
+
+
+</div>
+    <div class="modal-action ">
+      <form class="w-full flex justify-center items-center" method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn px-[200px] ">Cancel</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+ 
+<footer><section class="bg-[#131313]">
+<div class="flex flex-col items-center   lg:grid lg:grid-cols-3  py-10 mt-10 w-[90%] mx-auto ">
+
+<div class="text-white px-5 py-2">
+    <h1 class="btn btn-ghost text-xl"><span class="text-[#0E7A81]"><i class="fa-solid fa-paw"></i></span> Peddy</h1>
+    <div><p class="text-[#FFFFFF99]">Location: av. Washington 165, NY CA 54003</p>
+       <p class="text-[#FFFFFF99]"> Phone: +31 85 964 47 25</p>
+     <pp  class="text-[#FFFFFF99]">   Email: info@yourdomain.com</pp>
+      <pp  class="text-[#FFFFFF99]">  Openings hours: 9.00 AM - 5.00 PM</pp></div>
+<div class="flex justify-between w-2/4 mt-2">
+<i class="fa-brands fa-facebook text-xl text-[#00B2FFFF]"></i>
+
+<i class="fa-solid fa-x text-xl text-[#FFFFFF]"></i>
+<i class="fa-brands fa-youtube text-xl text-[#FF0000]"></i>
+<i class="fa-brands fa-instagram text-xl text-[#8C3AAA]"></i>
+</div>
+      
+</div>
+
+
+
+
+
+
+
+<div class="ml-7">
+<h1 class="text-white font-bold py-4 ">Useful Links</h1>
+<p class="text-[#FFFFFF99]">Home</p>
+<p class="text-[#FFFFFF99]">About Us</p>
+<p class="text-[#FFFFFF99]">Animals</p>
+<p class="text-[#FFFFFF99]">Foundation</p>
+<p class="text-[#FFFFFF99]">Contact</p>
+
+
+
+</div>
+<div class="py-4 ml-7">
+<h1 class="text-[#FFFFFFE6]">Drop a Message</h1>
+<input type="text" placeholder="Enter your email" class="w-40 mt-5 rounded-lg py-2 px-2 bg-[#FFFFFF0D]"><br>
+<button class="w-40 bg-[#0E7A81]  rounded-lg py-2 mt-5 flex items-center justify-center text-white">Subscribe</button>
+
+</div>
+
+
+
+</div>
+</section>
+</footer>
+
+
+
+
+
+
+
+
+     
+<script src="./index.js"></script>
+
+    
+</body>
+</html>
