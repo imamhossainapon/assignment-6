@@ -6,8 +6,8 @@ let view = ()=>{
 // main function
 let load_all_data = async()=>{
 console.log('load_all_data');
-    let promise =  await fetch('https://openapi.programming-hero.com/api/peddy/categories')
-    let category = await promise.json()
+    let res =  await fetch('https://openapi.programming-hero.com/api/peddy/categories')
+    let category = await res.json()
 
 
    display_catagory(category.categories)
@@ -45,8 +45,8 @@ categories_section1.append(div)
 
 // function_3
 let load_dog_card = async(r)=>{
-    let promise =  await fetch('https://openapi.programming-hero.com/api/peddy/pets')
-    let category = await promise.json()
+    let res =  await fetch('https://openapi.programming-hero.com/api/peddy/pets')
+    let category = await res.json()
 // console.log(category);
 let x = category.pets
 dog_card (x); 
@@ -229,6 +229,7 @@ window.countdown =setInterval(() =>{
         spinner.classList.remove('hidden');
         setTimeout(()=>{
             load_pet_card()
+            
             spinner.classList.add('hidden');
         },2000);
     });
@@ -237,11 +238,12 @@ window.countdown =setInterval(() =>{
 
 let load_pet_card = async(r)=>{
 
-    let promise =  await fetch('https://openapi.programming-hero.com/api/peddy/pets')
-    let category = await promise.json()
+    let res=  await fetch('https://openapi.programming-hero.com/api/peddy/pets')
+    let category = await res.json()
 // console.log(category);
 let x = category.pets
 let cards =category.pets
+
 cards.sort((a,b)=> b.price - a.price)
 dog_card (x);  
 }
