@@ -15,13 +15,11 @@ console.log('load_all_data');
 }
 //  function 2
 let display_catagory =(data)=>{
-console.log(data);
-    let categories_section1 = document.getElementById('card-4')
-    // spiner(data)
+    let categories_section1 = document.getElementById('card-4') 
 let two_item = data.slice(0,2)
 two_item.sort((a,b) => b.category.localeCompare(a.category))
 two_item.forEach((item) => {
-// console.log(item);
+
 let div = document.createElement('div');
 div.classList ="flex"
 div.innerHTML =`
@@ -29,10 +27,8 @@ div.innerHTML =`
 categories_section1.append(div)
 });
 
-
 let remaining_item = data.slice(2)
 remaining_item.forEach((item) => {
-// console.log(item);
 let div = document.createElement('div');
 div.classList ="flex px-2"
 div.innerHTML =`
@@ -48,6 +44,7 @@ let load_dog_card = async(r)=>{
     let res =  await fetch('https://openapi.programming-hero.com/api/peddy/pets')
     let category = await res.json()
 // console.log(category);
+sort_pet = category.pets
 let x = category.pets
 dog_card (x); 
 }
@@ -98,7 +95,7 @@ card2.innerHTML =`
         </div>
 
           <div class="flex items-center justify-between mb-5 w-[100%] mx-auto mt-6">
-            <div class="bg-white rounded-lg"><button onclick="like_show('${card.petId}')" class="py-2 font-bold text-[#2bcdc8]   lg:px-6 px-2 shadow-lg rounded-lg"><i class="fa-regular fa-thumbs-up"></i></button></div>
+            <div class="bg-white rounded-lg"><button onclick="like_show('${card.petId}')" class="lg:py-2 py-1 font-bold text-[#2bcdc8]   px-6  shadow-lg rounded-lg"><i class="fa-regular fa-thumbs-up"></i></button></div>
 
             <div class="bg-white rounded-lg"><button onclick="adopt('${card.petId}')"  class="text-[#cda72b] font-bold  py-1 px-2  lg:py-2 lg:px-4 shadow-lg rounded-lg ">Adopt</button></div>
 
@@ -108,9 +105,10 @@ card2.innerHTML =`
 </div>`
 card_section.append(card2 )
 })}
-
+let sort_pet =[]
 // function 4
 let pet_click = async(categoryName)=>{
+
     let remove_btn = document.getElementsByClassName("remove-btn")
 for(let btn of remove_btn) { 
     btn.classList.remove("Active");
@@ -120,6 +118,7 @@ for(let btn of remove_btn) {
         fetch(`https://openapi.programming-hero.com/api/peddy/category/${categoryName}`)
 .then((res)=> res.json())
 .then((data)=>{ 
+    sort_pet = data.data
     let active_button = document.getElementById(`btn-${categoryName}`)
     active_button.classList.add('Active')
     dog_card(data.data)
@@ -228,25 +227,22 @@ window.countdown =setInterval(() =>{
         let spinner =document.getElementById('spinner')
         spinner.classList.remove('hidden');
         setTimeout(()=>{
-            load_pet_card()
-            
+            let active_button = document.querySelector('.Active')
+            if(active_button){
+   sort_pet.sort((a,b) => b.price - a.price)
+                dog_card(sort_pet)
+ }
+ else { 
+ sort_pet.sort((a,b)=> b.price - a.price)
+ dog_card(sort_pet)
+    
+            }   
+    
+              
             spinner.classList.add('hidden');
         },2000);
     });
     
-    //   all pet sort
-
-let load_pet_card = async(r)=>{
-
-    let res=  await fetch('https://openapi.programming-hero.com/api/peddy/pets')
-    let category = await res.json()
-// console.log(category);
-let x = category.pets
-let cards =category.pets
-
-cards.sort((a,b)=> b.price - a.price)
-dog_card (x);  
-}
 
 
 let etc = ()=>{
